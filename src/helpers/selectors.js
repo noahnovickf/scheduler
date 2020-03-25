@@ -28,26 +28,12 @@ export function getInterview(state, interview) {
 }
 
 export function getInterviewersForDay(state, day) {
-  let filteredDays = state.days.filter(currentDay => currentDay.name === day);
-  if (filteredDays === [] || !day || filteredDays[0] === undefined) {
+  const currentDay = state.days.find(stateDay => day === stateDay.name);
+  if (!currentDay || currentDay.interviewers.length === 0) {
     return [];
   }
-
-  const interviewer = [];
-
-  for (let appointment of Object.values(state.appointments)) {
-    if (
-      appointment.interview &&
-      !interviewer.includes(appointment.interview.interviewer)
-    ) {
-      interviewer.push(appointment.interview.interviewer);
-    }
-  }
-  const newInterviewerArr = [];
-  for (let id of interviewer) {
-    if (id === state.interviewers[id].id) {
-      newInterviewerArr.push(state.interviewers[id]);
-    }
-  }
-  return newInterviewerArr;
+  const foundInterviewers = currentDay.interviewers.map(interviewer => {
+    return state.interviewers[interviewer];
+  });
+  return foundInterviewers;
 }

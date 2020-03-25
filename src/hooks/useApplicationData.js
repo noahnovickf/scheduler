@@ -20,6 +20,12 @@ export function useApplicationData() {
     };
     return axios.put(`/api/appointments/${id}`, appointment).then(() => {
       setState(prev => ({ ...prev, appointments }));
+      Promise.all([axios.get(`/api/days`)]).then(([days]) => {
+        setState(prev => ({
+          ...prev,
+          days: days.data
+        }));
+      });
     });
   }
 
@@ -34,6 +40,12 @@ export function useApplicationData() {
     };
     return axios.delete(`/api/appointments/${id}`, appointment).then(() => {
       setState(prev => ({ ...prev, appointments }));
+      Promise.all([axios.get(`/api/days`)]).then(([days]) => {
+        setState(prev => ({
+          ...prev,
+          days: days.data
+        }));
+      });
     });
   }
 
