@@ -26,4 +26,4 @@ npm run storybook
 
 ## Hompage
 
-![Scheduler Hompage](link-to-image)
+![Scheduler Hompage](https://github.com/noahnovickf/scheduler/blob/master/public/images/Homepage.png)

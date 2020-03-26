@@ -4,7 +4,6 @@ import "components/InterviewList.scss";
 import PropTypes from "prop-types";
 
 export default function InterviewerList(props) {
-  //console.log("working:", props.interviewers);
   const interviewers = props.interviewers.map(interviewer => {
     return (
       <InterviewerListItem

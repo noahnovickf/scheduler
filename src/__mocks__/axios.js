@@ -1,3 +1,4 @@
+//data for testing purposes
 const fixtures = {
   days: [
     {
@@ -52,7 +53,7 @@ const fixtures = {
     }
   }
 };
-
+//mock functions for testing purposes
 export default {
   defaults: { baseURL: "" },
   get: jest.fn(url => {

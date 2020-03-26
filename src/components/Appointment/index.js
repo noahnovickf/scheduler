@@ -35,6 +35,7 @@ export default function Appointment(props) {
       })
       .catch(() => transition(ERROR_SAVE));
   }
+
   function delete1() {
     transition(DELETE, true);
 

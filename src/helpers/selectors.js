@@ -1,5 +1,3 @@
-// import InterviewerList from "components/InterviewerList";
-
 export function getAppointmentsForDay(state, day) {
   let filteredDays = state.days.filter(currentDay => currentDay.name === day);
   if (filteredDays === [] || !day || filteredDays[0] === undefined) {
