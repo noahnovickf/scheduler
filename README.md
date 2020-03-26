@@ -1,5 +1,7 @@
 # Interview Scheduler
 
+Book interviews on a single page web app. Create, edit and delete bookings.
+
 ## Setup
 
 Install dependencies with `npm install`.
@@ -21,3 +23,7 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Hompage
+
+![Scheduler Hompage](link-to-image)
